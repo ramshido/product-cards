@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page">
+  <header class="page__header header">
+    <div class="header__container container">
+      <div class="header__user-menu user-menu">
+        <div class="user-menu__shopping-cart">
+          <a href="#" class="user-menu__link">
+            <span class="visually-hidden">Корзина</span>
+            <span class="user-menu__count" aria-label="Количество товаров в корзине">0</span>
+          </a>
+
+          <div class="user-menu__cart shopping-cart">
+            <template id="shopping-cart-product">
+              <li class="shopping-cart__item">
+                <button type="button" class="shopping-cart__delete" aria-label="Удалить товар из корзины"><span></span></button>
+                <a href="#" class="shopping-cart__link">  
+                  <img src="images/1.jpg" alt="первый товар">
+                  <p>Увлажняющий мусс</p>
+                  <span>2 750 ₽</span>
+                </a>
+              </li>
+            </template>
+            <ul class="shopping-cart__list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="page__main">
+    <section class="catalog container">
+      <h1 class="catalog__title title">Выбери свой продукт</h1>
+
+      <template id="product">
+        <div class="product">
+          <a href="https://site.com/" class="product__link"></a>
+          <img src="images/1.jpg" alt="Товар Увлажняющий мусс" class="product__img">
+
+          <p class="product__tag">для нормальной кожи</p>
+          <h2 class="product__title">Увлажняющий мусс</h2>
+
+          <div class="product__description">
+            <p>Глубоко увлажняют кожу лица, оставляя её мягкой и гладкой.</p>
+          </div>
+
+          <span class="product__mini-title">Состав:</span>
+          <ul class="product__compound">
+            <li>активные натуральные комплексы Lorem ipsum dolor sit amet consectetur adipisicing elit. A vitae quod reiciendis eius in similique, nesciunt deserunt adipisci recusandae totam?</li>
+            <li>витамины С, А, РР, В И Е</li>
+            <li>солнцезащитные компоненты</li>
+          </ul>
+
+          <div class="product__price">
+            <b>Цена</b>
+            <span>2 750 ₽</span>
+          </div>
+          <button type="button" class="product__button button">Добавить в корзину</button>
+        </div>
+      </template>
+      <ul class="catalog__list"></ul>
+    </section>
+  </main>
+
+  <div class="modal modal_hide" id="modal_cart">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <h2 class="modal__title">Товар добавлен в корзину</h2>
+      <button type="button" class="modal__close button">Продолжить покупки</button>
+    </div>
+  </div>
+
+  <div class="modal modal_hide" id="modal_cart_error">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <h2 class="modal__title modal__title_red">Ошибка</h2>
+      <p>Такой товар уже был ранее добавлен в корзину</p>
+      <button type="button" class="modal__close button">Выбрать другой</button>
+    </div>
+  </div>
+  <script src="js/main.js" defer type="module"></script>
+</body>
+</html>
